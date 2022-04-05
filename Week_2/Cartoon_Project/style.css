@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url(bkgrnd.jpg);
+    background-size: cover;
+	overflow: hidden;
+    background-repeat: no-repeat;
+}
+#SB
+	{
+		position:relative;
+		top:360px;
+        left: 600px;
+		background: url(css-sprite-combined.png); 
+		width:595px;
+		height:567px;		
+		animation:walking_animation 6s steps(156) reverse infinite;
+  
+        animation-fill-mode: forwards;
+        animation-delay: 20s;
+    }
+
+    #SBArm
+	{
+		position:fixed;
+		top:360px;
+        left: 600px;
+		background: url(css-sprite-SBarm.png); 
+		width:595px;
+		height:567px;		
+		animation:walking_animation 6s steps(156) reverse infinite;
+  
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+    }
+
+    @keyframes walking_animation
+	{
+		0%{background-position:0px;}
+        100%{background-position: 92820px;}
+        
+        
+	}
+    @keyframes move_forward
+	{
+		
+	}

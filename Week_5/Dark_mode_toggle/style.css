@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .darkMode {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    clip-path: circle(20px at 80px 80px);
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+  }
+  .whiteMode {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    clip-path: circle(0px at 80px 80px);
+    transition: all 1s ease-in-out;
+  }
+  .darkMode-active {
+    clip-path: circle(100%);
+  }
+  .whiteMode-active {
+    clip-path: circle(20px at 80px 80px);
+  }

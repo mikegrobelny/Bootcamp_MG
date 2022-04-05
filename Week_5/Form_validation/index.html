@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            padding: 10px 50px;
+        }
+
+        .formdesign {
+            font-size: 20px;
+        }
+
+        .formdesign input {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid green;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .formerror {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">FORM VALIDATION BY JAVASCRIPT</h1>
+    <form action="#" target="_self, name=" myForm" onsubmit="return validateForm()">
+        <div class="formdesign" id="name">
+            Name<input type="text" name="fname">
+            <span class="formerror"></span>
+        </div>
+        <div class="formdesign" id="email">
+            Email<input type="email" email="femail">
+            <span class="formerror"></span>
+        </div>
+        <div class="formdesign" id="phone">
+            Phone<input type="phone" email="fphone">
+            <span class="formerror"></span>
+        </div>
+        <div class="formdesign" id="pass">
+            Password<input type="password" email="fpass">
+            <span class="formerror"></span>
+        </div>
+        <div class="formdesign" id="cpass">
+            Confirm Password<input type="password" email="fcpass">
+            <span class="formerror"></span>
+        </div>
+        <input class="button" type="submit" value="Submit">
+
+
+    </form>
+
+    <script>
+        //this function will clear the errors once we provide correct format or at start
+        function clearErrors() {
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+
+        }
+        //stes error inside tag of id
+        function seterror(id, error) {
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+        }
+        //perform validation and if validation fails, set the value of the return to false
+        function validateForm() {
+            var returnval = true;
+            clearErrors();
+            var name = document.forms['myForm']["fname"].value;
+            if (name.legth < 5) {
+                seterror("name", "**Length of name is too short");
+                returnval = false;
+            }
+            return returnval
+
+        }
+
+
+    </script>
+</body>
+
+</html>
